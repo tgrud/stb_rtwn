@@ -11,6 +11,7 @@ exports.save = function(req, res, next) {
   badge.save(badges, function(err) {
     if(err) return res.json(503, { error: true });
     next();
+    badge.trim();
   });
 };
 
