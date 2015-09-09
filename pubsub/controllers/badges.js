@@ -18,4 +18,20 @@ exports.save = function(req, res, next) {
 /**
  *  Send badges to pub/sub socket in model
  */
-exports.send = function() {};
+exports.send = function(req, res, next) {
+  var badges = _.clone(req.body);
+  badge.send(badges, function(err) {
+    if(err) return res.json(503, { error: true });
+    res.json(200, { error: null });
+  });
+};
+
+/**
+ *  Get 10 badges from model
+ */
+exports.get = function(req, res) {
+  badge.get(function(err, data) {
+    if(err) return res.json(503, { error: true });
+    res.json(200, data);
+  });
+};
