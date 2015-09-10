@@ -1,0 +1,15 @@
+{
+  "name": "appdata",
+  "version": "1.0.0",
+  "description": "Test data for soup to bits app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "arrandom": "0.0.3",
+    "request": "^2.61.0"
+  }
+}
